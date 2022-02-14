@@ -2,7 +2,7 @@
 name: manual
 
 on:
-  workflow_dispatch:
+  workflow_dispatch
   schedule:
     - "10 1 28 * *"
 
