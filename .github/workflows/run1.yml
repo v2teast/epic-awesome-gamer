@@ -1,10 +1,5 @@
 name: scaffold_test
 
-on:
-  workflow_dispatch:
-  schedule:
-    - "5 1 28 * *"
-
 jobs:
   setup:
     runs-on: ubuntu-latest
