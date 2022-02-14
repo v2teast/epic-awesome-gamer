@@ -155,7 +155,7 @@ class YOLO:
         height, width = img.shape[:2]
 
         blob = cv2.dnn.blobFromImage(
-            img, 0.00392, (320, 320), (0, 0, 0), swapRB=True, crop=False
+            img, 1 / 255.0, (128, 128), (0, 0, 0), swapRB=True, crop=False
         )
         self.download_model()
 
@@ -213,7 +213,6 @@ class ArmorCaptcha:
             "船": "boat",
             "汽车": "car",
             "摩托车": "motorbike",
-            "水上飞机": "boat",
         }
 
         # 样本标签映射 {挑战图片1: locator1, ...}

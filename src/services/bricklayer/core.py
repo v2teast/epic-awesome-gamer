@@ -150,7 +150,7 @@ class ArmorUtils(ArmorCaptcha):
         self.runtime_workspace = workspace_
 
     def challenge_success(
-            self, ctx: Chrome, init: bool = True, **kwargs
+        self, ctx: Chrome, init: bool = True, **kwargs
     ) -> Optional[bool]:
         """
         判断挑战是否成功的复杂逻辑
@@ -407,12 +407,12 @@ class AssertUtils:
         try:
             warning_text = (
                 WebDriverWait(ctx, 5, ignored_exceptions=WebDriverException)
-                    .until(
+                .until(
                     EC.presence_of_element_located(
                         (By.XPATH, "//div[@data-component='DownloadMessage']//span")
                     )
                 )
-                    .text
+                .text
             )
             if warning_text == "感谢您的购买":
                 raise PaymentAutoSubmit
@@ -426,12 +426,12 @@ class AssertUtils:
         try:
             warning_text = (
                 WebDriverWait(ctx, 3, ignored_exceptions=WebDriverException)
-                    .until(
+                .until(
                     EC.presence_of_element_located(
                         (By.XPATH, "//h2[@class='payment-blocked__msg']")
                     )
                 )
-                    .text
+                .text
             )
             if warning_text:
                 raise PaymentException(warning_text)
@@ -446,10 +446,10 @@ class AssertUtils:
 
     @staticmethod
     def purchase_status(
-            ctx: Chrome,
-            page_link: str,
-            action_name: Optional[str] = "AssertUtils",
-            init: Optional[bool] = True,
+        ctx: Chrome,
+        page_link: str,
+        action_name: Optional[str] = "AssertUtils",
+        init: Optional[bool] = True,
     ) -> Optional[str]:
         """
         断言当前上下文页面的游戏的在库状态。
@@ -484,8 +484,8 @@ class AssertUtils:
         # 游戏名 超时的空对象主动抛出异常
         game_name = (
             WebDriverWait(ctx, 30, ignored_exceptions=ElementNotVisibleException)
-                .until(EC.visibility_of_element_located((By.XPATH, "//h1")))
-                .text
+            .until(EC.visibility_of_element_located((By.XPATH, "//h1")))
+            .text
         )
 
         if game_name[-1] == "。":
@@ -740,7 +740,7 @@ class AwesomeFreeMan:
         ctx.refresh()
 
     def _get_free_game(
-            self, page_link: str, api_cookies: List[dict], ctx: Chrome
+        self, page_link: str, api_cookies: List[dict], ctx: Chrome
     ) -> None:
         """
         获取免费游戏

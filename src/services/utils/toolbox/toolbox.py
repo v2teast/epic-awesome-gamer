@@ -24,7 +24,7 @@ class ToolBox:
 
     @staticmethod
     def check_sample_yaml(
-            path_output: str, path_sample: str
+        path_output: str, path_sample: str
     ) -> Optional[Dict[str, Any]]:
         """
         检查模板文件是否存在，检查配置文件是否存在，读取系统配置返回
@@ -64,7 +64,7 @@ class ToolBox:
 
     @staticmethod
     def runtime_report(
-            action_name: str, motive: str = "RUN", message: str = "", **params
+        action_name: str, motive: str = "RUN", message: str = "", **params
     ) -> str:
         """格式化输出"""
         flag_ = f">> {motive} [{action_name}]"
@@ -77,7 +77,7 @@ class ToolBox:
 
     @staticmethod
     def transfer_cookies(
-            api_cookies: Union[List[Dict[str, str]], str]
+        api_cookies: Union[List[Dict[str, str]], str]
     ) -> Union[str, List[Dict[str, str]]]:
         """
         将 cookies 转换为可携带的 Request Header
@@ -104,9 +104,9 @@ class ToolBox:
 
     @staticmethod
     def date_format_now(
-            mode: Optional[str] = None,
-            zone: Optional[str] = None,
-            threshold: Optional[int] = None,
+        mode: Optional[str] = None,
+        zone: Optional[str] = None,
+        threshold: Optional[int] = None,
     ) -> str:
         """
         输出格式化日期
