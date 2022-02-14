@@ -3,8 +3,6 @@ name: manual
 
 on:
   workflow_dispatch
-  schedule:
-    - "10 1 28 * *"
 
 jobs:
   setup:
